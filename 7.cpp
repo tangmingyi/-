@@ -16,6 +16,7 @@ void initDp(std::vector<std::vector<int >>& dp, const std::vector<int >& value,i
         (*Iter)[0] = (*(Iter-1))[0] + std::abs(*IterValue - *(IterValue-1));
         IterValue++;
     }
+    //初始化dp[i][i-1]
     dp[2][1] = std::abs(value[1]-value[0]);
     for(int i=3;i<n;i++){
         dp[i][i-1] = dp[i-1][i-2] + std::abs(value[i-1]-value[i-2]);
